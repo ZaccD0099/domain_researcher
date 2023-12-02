@@ -1,0 +1,17 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Domain Name Checker",
+    "name_for_model": "domainchecker",
+    "description_for_human": "Check the availability of domain names.",
+    "description_for_model": "Plugin to check if certain domain names are available. Provide a list of domain names to check their availability.",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "https://zaccd0099.github.io/domain_researcher/openapi.yaml"
+    },
+    "logo_url": "https://example.com/logo.png",
+    "contact_email": "support@example.com",
+    "legal_info_url": "http://www.example.com/legal"
+}
