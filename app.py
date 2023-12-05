@@ -5,8 +5,8 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 # Fetch environment variables
-api_key = os.environ.get('Godaddy_Api_Key', None)
-api_secret = os.environ.get('Godaddy_Secret', None)
+api_key = os.environ.get('GoDaddy_Api_Key', None)
+api_secret = os.environ.get('GoDaddy_Secret', None)
 
 @app.route('/check_domains', methods=['POST'])
 def check_domains():
@@ -18,17 +18,6 @@ def check_domains():
         url = f"https://api.godaddy.com/v1/domains/available?domain={domain}"
         headers = {"Authorization": f"sso-key {api_key}:{api_secret}"}
         response = requests.get(url, headers=headers)
-        
-        # if response.status_code == 200:
-        #     domain_data = response.json()
-        #     if domain_data['available']:
-        #         purchase_url = f'https://www.godaddy.com/domainsearch/find?domainToCheck={domain}'
-        #         available_domains_info.append({
-        #             "domain": domain,
-        #             "price": domain_data['price'],
-        #             "currency": domain_data['currency'],
-        #             "purchase_url": purchase_url
-        #         })
 
         if response.status_code == 200:
             domain_data = response.json()
