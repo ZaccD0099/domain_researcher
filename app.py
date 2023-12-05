@@ -1,7 +1,12 @@
 import requests
+import os
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
+
+# Fetch environment variables
+api_key = os.environ.get('Godaddy_Api_Key', None)
+api_secret = os.environ.get('Godaddy_Secret', None)
 
 @app.route('/check_domains', methods=['POST'])
 def check_domains():
